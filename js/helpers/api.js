@@ -1,7 +1,7 @@
 // https://mi-presupuesto-personal.herokuapp.com
 // http://localhost:3000
 
-const DOMAIN = `http://localhost:3000`,
+const DOMAIN = `https://mi-presupuesto-personal.herokuapp.com`,
   API = `${DOMAIN}/api`,
   OPERATIONS = `${API}/operations`,
   INCOMES = `${API}/operations/income`,
