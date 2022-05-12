@@ -1,12 +1,14 @@
 // https://mi-presupuesto-personal.herokuapp.com
 // http://localhost:3000
 
-const DOMAIN = `https://mi-presupuesto-personal.herokuapp.com`,
+const DOMAIN = `http://localhost:3000`,
   API = `${DOMAIN}/api`,
   OPERATIONS = `${API}/operations`,
   INCOMES = `${API}/operations/income`,
   EXPENSES = `${API}/operations/expense`,
-  COUNT = `${API}/operations/count`;
+  COUNT = `${API}/operations/count`,
+  INCOMES_COUNT = `${API}/operations/income/count`,
+  EXPENSES_COUNT = `${API}/operations/expense/count`;
 
 const operationsOfPage = (p) => `${OPERATIONS}?page=${p}`;
 const incomesOfPage = (p) => `${INCOMES}?page=${p}`;
@@ -21,6 +23,8 @@ export default {
   INCOMES,
   EXPENSES,
   COUNT,
+  INCOMES_COUNT,
+  EXPENSES_COUNT,
   operationsOfPage,
   incomesOfPage,
   expensesOfPage,
