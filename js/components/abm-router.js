@@ -1,26 +1,26 @@
 import ajax from '../helpers/ajax.js';
 import api from '../helpers/api.js';
 import operationsList from './operations-list.js';
-/* import scrollPage from '../helpers/scrollPage.js'; */
-import operationsListItems from './operations-list-items.js';
+import createForm from './create-form.js';
 
 const d = document;
 export default async function abmRouter() {
-  let $main = d.getElementById('main'),
+  let $abmContent = d.getElementById('abm-content'),
     { hash } = location;
   if (!hash || hash === '#incomes') {
     await ajax({ url: api.incomesOfPage(api.apiPage) }, (data) => {
       console.log(data);
-      $main.appendChild(operationsList(data, 'Income history'));
+      $abmContent.appendChild(operationsList(data, 'Income history'));
     });
   }
   if (hash === '#expenses') {
     await ajax({ url: api.expensesOfPage(api.apiPage) }, (data) => {
       console.log(data);
-      $main.appendChild(operationsList(data, 'Expense history'));
+      $abmContent.appendChild(operationsList(data, 'Expense history'));
     });
   }
   if (hash === '#create') {
+    $abmContent.appendChild(createForm('create-form-template'));
   }
   if (hash === '#update') {
   }

@@ -7,7 +7,7 @@ const d = document,
 export default async function abmApp() {
   api.apiPage = 1;
   try {
-    await d.getElementById('operations-container').remove();
+    d.getElementById('abm-content').innerHTML = '';
   } catch (error) {}
 
   console.log('ABM app');

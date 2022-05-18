@@ -4,14 +4,14 @@ import operationsListItems from '../components/operations-list-items.js';
 const w = window,
   d = document;
 
-let $main = d.getElementById('main');
+let $abmContent = d.getElementById('abm-content');
 const addItems = async (apiCountUrl, apiDataUrl) => {
   await ajax({ url: apiCountUrl }, async (count) => {
     let totalPages = Math.ceil(count / 10);
     if (api.apiPage > 1 && api.apiPage <= totalPages) {
       await ajax({ url: apiDataUrl }, (data) => {
         console.log(data);
-        $main
+        $abmContent
           .querySelector('#operations-container ul')
           .appendChild(operationsListItems(data));
       });

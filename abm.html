@@ -38,7 +38,7 @@
     </div>
     <hr>
 
-
+    <div class="row" id="abm-content"></div>
 
   </main>
 
@@ -61,8 +61,7 @@
     <div class="row">
       <h2>Create operation</h2>
     </div>
-    <hr>
-    <form id="createForm" class="row row-cols-1 row-cols-sm-2 form align-items-center">
+    <form id="create-form" class="row row-cols-1 row-cols-sm-2 form align-items-center">
       <div class="p-2">
         <label class="form-label" for="amount">Amount</label>
         <input class="form-control" type="number" name="amount" id="amount" step="0.01" min="0" placeholder="0000.00"
@@ -71,14 +70,14 @@
 
       <div class="p-2 d-flex justify-content-evenly align-items-center">
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="_type" id="income" checked>
+          <input class="form-check-input" type="radio" name="_type" id="income" value="income" checked>
           <label class="form-check-label" for="income">
             Income
           </label>
         </div>
 
         <div class=" p-2 form-check">
-          <input class="form-check-input" type="radio" name="_type" id="expense">
+          <input class="form-check-input" type="radio" name="_type" id="expense" value="expense">
           <label class="form-check-label" for="expense">
             Expense
           </label>
@@ -87,9 +86,9 @@
 
       <div class="p-2">
         <label for="concept" class="form-label">Concept</label>
-        <select form="createForm" class="form-select" aria-label="Default select example" id="concept" required>
-          <option selected>Select concept</option>
-          <option value="entertainment" required>Enternainment</option>
+        <select form="create-form" class="form-select" aria-label="Select concept" id="concept" required>
+          <option value="">Select concept</option>
+          <option value="entertainment">Enternainment</option>
           <option value="supermarket">Supermarket</option>
           <option value="clothing">Clothing</option>
           <option value="services">Services</option>
@@ -121,8 +120,7 @@
     <div class="row">
       <h2>Update operation</h2>
     </div>
-    <hr>
-    <form id="createForm" class="row row-cols-1 row-cols-sm-2 form align-items-center">
+    <form id="update-form" class="row row-cols-1 row-cols-sm-2 form align-items-center">
       <div class="p-2">
         <label class="form-label" for="amount">Amount</label>
         <input class="form-control" type="number" name="amount" id="amount" step="0.01" min="0" placeholder="0000.00"
@@ -131,7 +129,7 @@
 
       <div class="p-2">
         <label for="concept" class="form-label">Concept</label>
-        <select form="createForm" class="form-select" aria-label="Default select example" id="concept" required>
+        <select form="update-form" class="form-select" aria-label="Select concept" id="concept" required>
           <option selected>Select concept</option>
           <option value="entertainment" required>Enternainment</option>
           <option value="supermarket">Supermarket</option>
