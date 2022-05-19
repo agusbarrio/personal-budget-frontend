@@ -1,7 +1,7 @@
 import ajax from '../helpers/ajax.js';
 import api from '../helpers/api.js';
 import operationsList from './operations-list.js';
-import createForm from './create-form.js';
+import form from './form.js';
 
 const d = document;
 export default async function abmRouter() {
@@ -20,8 +20,17 @@ export default async function abmRouter() {
     });
   }
   if (hash === '#create') {
-    $abmContent.appendChild(createForm('create-form-template'));
+    $abmContent.appendChild(form('create-form-template'));
   }
   if (hash === '#update') {
+    let $form = form('update-form-template');
+    $form.getElementById('update-form').id.value = localStorage.getItem('id');
+    $form.getElementById('update-form').amount.value =
+      localStorage.getItem('amount');
+    $form.getElementById('update-form')._date.value =
+      localStorage.getItem('_date');
+    $form.getElementById('update-form').concept.value =
+      localStorage.getItem('concept');
+    $abmContent.appendChild($form);
   }
 }

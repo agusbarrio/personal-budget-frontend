@@ -33,7 +33,7 @@
 
       <div class="btn-group" role="group" aria-label="Basic example">
         <a href="#create" type="button" class="m-1 btn btn-primary">Create operation</a>
-        <a href="#update" type="button" class="m-1 btn btn-primary">Update operation</a>
+
       </div>
     </div>
     <hr>
@@ -44,13 +44,19 @@
 
 
   <template id="operation-template">
-    <li class=" row my-1 mx-0 bg-info bg-gradient rounded-3 fw-bold">
+    <li class=" row my-1 mx-0 pb-1 bg-info bg-gradient rounded-3 fw-bold">
       <article class="container-fluid">
-        <div class="row row-cols-2">
+        <div class="row row-cols-2 justify-content-evenly">
           <p id="amount"></p>
           <p id="concept"></p>
           <p id="_type"></p>
           <p id="date"></p>
+          <a href="#update" type="button" class="col-5 p-1 btn btn-primary">Update</a>
+          <form id="delete-form" class="col-5 m-0 p-0">
+            <input type="submit" class="w-100 p-1 btn btn-danger" value="Delete">
+          </form>
+
+
         </div>
       </article>
     </li>
@@ -121,6 +127,10 @@
       <h2>Update operation</h2>
     </div>
     <form id="update-form" class="row row-cols-1 row-cols-sm-2 form align-items-center">
+      <div class="p-2">
+        <label class="form-label" for="id">ID</label>
+        <input class="form-control" type="number" name="id" id="id" step="1" min="0" disabled required>
+      </div>
       <div class="p-2">
         <label class="form-label" for="amount">Amount</label>
         <input class="form-control" type="number" name="amount" id="amount" step="0.01" min="0" placeholder="0000.00"
