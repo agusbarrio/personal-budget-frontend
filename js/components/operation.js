@@ -8,8 +8,10 @@ export default function operation(data) {
     $c_type = $clone.getElementById('_type'),
     $c_concept = $clone.getElementById('concept'),
     $c_date = $clone.getElementById('date');
+  if ($clone.querySelector('form')) {
+    $clone.querySelector('form').dataset.id = id;
+  }
 
-  $clone.querySelector('form').dataset.id = id;
   $clone.querySelector('li').dataset.id = id;
   /*$clone.querySelector('li').dataset._type = _type;
   $clone.querySelector('li').dataset.concept = concept;
